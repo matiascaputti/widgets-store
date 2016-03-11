@@ -1,13 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Widget from './Widget';
 
 class App extends React.Component {
+    constructor(){
+        super();
+        this.state = {
+            txt: 'empty title',
+            num: 0
+        };
+        this.updateTxt = this.updateTxt.bind(this);
+        this.updateNum = this.updateNum.bind(this);
+    }
+    updateTxt(event) {
+        this.setState({ txt: event.target.value });
+    }
+    updateNum(event) {
+        this.setState({ num: event.target.value });
+    }
     render() {
-        return <h1>
-            {this.props.txt}!
-            {this.props.num}!
-            </h1>
-        // return React.createElement('h1', null, 'Hello!')
+        return (
+            <div>
+                <Widget
+                    txt={this.state.txt}
+                    num={this.state.num}
+                    updateTxt={this.updateTxt}
+                    updateNum={this.updateNum}
+                />
+            </div>
+        )
     }
 }
 
