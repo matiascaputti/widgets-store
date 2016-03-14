@@ -3,7 +3,7 @@ import AppStore from '../stores/app-store';
 import CatalogItem from './app-catalogitem';
 
 function getCatalog() {
-    return { items: AppStore.getCatalog }
+    return { items: AppStore.getCatalog() }
 }
 
 class Catalog extends React.Component {
@@ -12,16 +12,16 @@ class Catalog extends React.Component {
         this.state = getCatalog();
     }
 
-    renderer() {
+    render() {
         let items = this.state.items.map( item => {
             return <CatalogItem key={ item.id } item={ item } />
         });
         return (
-            <div classNN="row">
+            <div className="row">
                 { items }
             </div>
         )
     }
-}
+};
 
 export default Catalog;

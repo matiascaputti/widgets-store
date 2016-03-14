@@ -1,6 +1,6 @@
 import {dispat ,register} from '../dispatchers/app-dispatcher';
 import AppConstants from '../constants/app-constants';
-import {EventEmiter} from 'events';
+import {EventEmitter} from 'events';
 
 const CHANGE_EVENT = 'change'
 
@@ -16,10 +16,10 @@ for (let i = 1; i < 9; i++) {
     });
 }
 
-var cartItems  [];
+var _cartItems = [];
 
 const _removeItem = ( item ) => {
-    _cartItem.splice( _cartItems.findIndex( i => i === item), 1);
+    _cartItems.splice( _cartItems.findIndex( i => i === item), 1);
 };
 
 const _findCartItem = ( item ) => {
@@ -38,7 +38,7 @@ const _decreaseItem = ( item ) => {
 const _addItem = ( item ) => {
     const cartItem = _findCartItem( item );
     if ( !cartItem ) {
-        cartItems.push( Object.assign( {qty: 1}, item ) );
+        _cartItems.push( Object.assign( {qty: 1}, item ) );
     }
     else {
         _increaseItem( cartItem );
@@ -73,7 +73,7 @@ const AppStore = Object.assign(EventEmitter.prototype, {
     getCatalog() {
         return _catalog.map(item => {
             return Object.assign(
-                {}, item, _cartIItems.find( cItem => cItem.idd === item.id)
+                {}, item, _cartItems.find( cItem => cItem.idd === item.id)
             )
         })
     },
@@ -93,7 +93,7 @@ const AppStore = Object.assign(EventEmitter.prototype, {
             case AppConstants.INCREASE_ITEM:
                 _increaseItem( action.item );
                 break;
-            casee AppConstants.DECREASE_ITEM:
+            case AppConstants.DECREASE_ITEM:
                 _decreaseItem( action.item );
                 break;
         }
