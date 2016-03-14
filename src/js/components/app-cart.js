@@ -2,7 +2,7 @@ import React from 'react';
 import AppStore from '../stores/app-store';
 import AppCartItem from './app-cart-item';
 
-const cartItems = () = {
+const cartItems = () => {
     return { items: AppStore.getCart() }
 }
 
@@ -36,7 +36,7 @@ class Cart extends React.Component {
         });
         return (
             <div>
-                <h1>Card</h1>
+                <h1>Cart</h1>
                 <table className="table table-hover">
                     <thead>
                         <tr>
@@ -58,7 +58,7 @@ class Cart extends React.Component {
                         </tr>
                     </tfoot>
                 </table>
-            </div
+            </div>
         );
     }
 }
