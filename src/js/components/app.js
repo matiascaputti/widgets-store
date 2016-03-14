@@ -1,6 +1,6 @@
 import React from 'react';
-import AppActions from '../actions/app-actions.js';
-import Catalog from './app-catalog.js';
+import AppActions from '../actions/app-actions';
+import Catalog from './app-catalog';
 import Cart from './app-cart';
 
 export default class App extends React.Component {
