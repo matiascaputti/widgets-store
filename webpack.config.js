@@ -1,23 +1,25 @@
 module.exports = {
-    entry: './main.js',
+    entry: './src/js/main.js',
     output: {
-        path: './',
-        filename: 'index.js'
-    },
-    devServer: {
-        inline: true,
-        port: 3333
+        path: './dist',
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     module: {
         loaders: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
+                test: /\.jsx?$/,
+                exclude: /(node_modules|bower_components)/,
                 loader: 'babel',
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['react', 'es2015']
                 }
             }
         ]
-    }
+    },
+    devServer: {
+        inline: true,
+        contentBase: './dist',
+        port: 3333
+    },
 }
