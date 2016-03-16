@@ -1,4 +1,4 @@
 # React
 ## Widgets store application
 
-![alt tag](http://www.programwitherik.com/content/images/2015/12/reactjs.png)
+![alt tag](https://www.wagonhq.com/images/posts/react.png)
