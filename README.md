@@ -1,7 +1,7 @@
 # React
 
 ### Widgets store application
-Checkout this repo, install depdencies, then start the gulp process with the following:
+Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
     > git clone git@github.com:maticaputti/react-widgets-store-application.git
