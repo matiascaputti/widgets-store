@@ -1,6 +1,6 @@
-# React
+# Widgets store application
 
-### Widgets store application
+### React
 Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
@@ -10,10 +10,6 @@ Checkout this repo, install dependencies, then start the gulp process with the f
     > npm start
 
 ```
-
-<p align="center">
-  <img src="http://formatjs.io/img/react.svg" width="150px" />
-</p>
 
 ---
 
